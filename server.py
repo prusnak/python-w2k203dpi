@@ -15,4 +15,4 @@ def root():
     return '<form method="post">\n<textarea name="txt" rows="5" cols="40"></textarea>\n<br>\n<input type="submit" value="Send"></form>\n'
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0')
