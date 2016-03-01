@@ -9,8 +9,8 @@ p = Printer()
 def root():
     if request.method == 'POST':
         data = request.form
-        txt = '\n\n' + data['txt'] + '\n\n'
-        print 'Received data:'
+        txt = data['txt']
+        print 'Received text:'
         print txt
         p.println(txt)
         p.fullcut()
