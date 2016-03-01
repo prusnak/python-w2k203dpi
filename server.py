@@ -10,6 +10,8 @@ def root():
     if request.method == 'POST':
         data = request.form
         txt = '\n\n' + data['txt'] + '\n\n'
+        print 'Received data:'
+        print txt
         p.println(txt)
         p.fullcut()
     return '<form method="post">\n<textarea name="txt" rows="5" cols="40"></textarea>\n<br>\n<input type="submit" value="Send"></form>\n'
