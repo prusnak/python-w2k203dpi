@@ -8,6 +8,7 @@ class Printer:
     def raw(self, data):
         for i in data:
            self.f.write(i)
+        self.f.flush()
 
     def esc(self, data):
         self.raw('\x1b' + data)
@@ -57,6 +58,7 @@ class Printer:
 
     def println(self, s = ''):
         self.f.write(s + '\n')
+        self.f.flush()
 
     def qrcode(self, data, pixelsize = 8):
         correction = 0   # 0 = L, 1 = M, 2 = Q, 3 = H
