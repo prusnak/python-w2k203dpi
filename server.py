@@ -5,16 +5,19 @@ from flask import Flask, request
 app = Flask(__name__)
 p = Printer()
 
-@app.route('/', methods=['GET', 'POST'])
-def root():
-    if request.method == 'POST':
-        data = request.form
-        txt = data['txt']
-        print 'Received text:'
-        print txt
-        p.println(txt)
-        p.fullcut()
+@app.route('/')
+def root_get():
     return '<form method="post">\n<textarea name="txt" rows="5" cols="40"></textarea>\n<br>\n<input type="submit" value="Send"></form>\n'
+
+@app.route('/', methods=['POST'])
+def root_post():
+    data = request.form
+    txt = data['txt']
+    print 'Received text:'
+    print txt
+    p.println(txt)
+    p.fullcut()
+    return '<h1>Yummy!</h1>'
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
