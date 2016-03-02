@@ -7,7 +7,7 @@ p = Printer()
 
 @app.route('/')
 def root_get():
-    return '<form method="post">\n<textarea name="txt" rows="5" cols="40"></textarea>\n<br>\n<input type="submit" value="Send"></form>\n'
+    return '<form method="post">\n<textarea name="txt" rows="10" cols="32"></textarea>\n<br>\n<input type="submit" value="Send"></form>\n'
 
 @app.route('/', methods=['POST'])
 def root_post():
