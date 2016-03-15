@@ -20,8 +20,7 @@ def root_post():
     p.println()
     p.println(txt)
     p.println()
-    p.println('-' * 16)
-    p.println()
+    p.println('-' * 32)
     return '<h1>Yummy!</h1>'
 
 if __name__ == '__main__':
