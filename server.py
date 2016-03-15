@@ -1,4 +1,5 @@
 #!/usr/bin/python
+from datetime import datetime
 from w2k203dpi import Printer
 from flask import Flask, request
 
@@ -15,8 +16,12 @@ def root_post():
     txt = data['txt']
     print 'Received text:'
     print txt
+    p.println(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+    p.println()
     p.println(txt)
-    p.fullcut()
+    p.println()
+    p.println('-' * 16)
+    p.println()
     return '<h1>Yummy!</h1>'
 
 if __name__ == '__main__':
